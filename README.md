@@ -21,6 +21,10 @@ cd Cifar10
 python train_cifar10.py -sr --s 0.0001 --dataset cifar10 --arch vgg --depth 19 --our 1 --prune_ratio 0.5 --epochs 160 --save ./logs-vgg
 python train_cifar10.py -sr --s 0.00001 --dataset cifar10 --arch resnet --depth 164 --our 1 --prune_ratio 0.5 --epochs 160 --save ./logs-resnet
 python train_cifar10.py -sr --s 0.00001 --dataset cifar10 --arch densenet --depth 40 --our 1 --prune_ratio 0.5 --epochs 160 --save ./logs-densenet
+# Layer pruning
+python train_cifar10_lp.py -sr --s 0.0001 --dataset cifar10 --arch vgg_lp --depth 19 --our 1 --prune_ratio 0.5 --epochs 160 --save ./logs-vgg
+python train_cifar10_lp.py -sr --s 0.00001 --dataset cifar10 --arch resnet_lp --depth 164 --our 1 --prune_ratio 0.5 --epochs 160 --save ./logs-resnet
+python train_cifar10_lp.py -sr --s 0.00001 --dataset cifar10 --arch densenet_lp --depth 40 --our 1 --prune_ratio 0.5 --epochs 160 --save ./logs-densenet
 ```
 
 # ImageNet

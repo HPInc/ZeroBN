@@ -32,6 +32,10 @@ class expend_block(nn.Module):
         if self.in_channels != self.out_channels:
             x = self.conv2d(x)
 
+            #it is also can be implemented to just skip by zero
+            #b = x.shape
+            #x = torch.zeros(b[0], self.out_channels, b[2], b[3]).cuda()
+
         return x
 
 
