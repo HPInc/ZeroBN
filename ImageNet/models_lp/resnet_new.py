@@ -3,7 +3,7 @@ import torch.nn as nn
 import numpy as np
 
 
-__all__ = ['resnet50_new', 'resnet50_new_2','resnet50_new_3']
+__all__ = ['resnet50_newlp']
 
 
 def conv3x3(in_planes, out_planes, stride=1, groups=1, dilation=1):
@@ -193,7 +193,7 @@ def _resnet(arch, block, layers, cfg, pretrained, progress, **kwargs):
     return model
 
 
-def resnet50_new(pretrained=False, progress=True, **kwargs):
+def resnet50_newlp(pretrained=False, progress=True, **kwargs):
     r"""ResNet-50 model from
     `"Deep Residual Learning for Image Recognition" <https://arxiv.org/pdf/1512.03385.pdf>`_
 
@@ -207,56 +207,6 @@ def resnet50_new(pretrained=False, progress=True, **kwargs):
     cfg = [64, 64, 64, 64, 64, 64, 64, 128, 128, 128, 128, 128, 128, 128, 128, 256,
            256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 512, 512,
            512, 512, 512, 512]
-
-    for tmp in range(3, 49, 3):
-        cfg.insert(tmp, cfg_def[tmp])
-
-    return _resnet('resnet50', Bottleneck, [3, 4, 6, 3], cfg, pretrained, progress,
-                   **kwargs)
-
-
-def resnet50_new_2(pretrained=False, progress=True, **kwargs):
-    r"""ResNet-50 model from
-    `"Deep Residual Learning for Image Recognition" <https://arxiv.org/pdf/1512.03385.pdf>`_
-
-    Args:
-        pretrained (bool): If True, returns a model pre-trained on ImageNet
-        progress (bool): If True, displays a progress bar of the download to stderr
-    """
-    cfg_def = [[64], [64, 64, 256] * 3, [128, 128, 512] * 4, [256, 256, 1024] * 6, [512, 512, 2048] * 3]
-    cfg_def = [item for sub_list in cfg_def for item in sub_list]
-
-    # cfg = [64, 64, 64, 64, 64, 64, 64, 128, 128, 128, 128, 128, 128, 128, 128, 256,
-    #        256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 512, 512,
-    #        512, 512, 512, 512]
-    cfg = [35, 22, 24, 14, 11, 2, 1, 15, 24, 1, 7, 5, 15, 17, 33, 80, 70, 2, 19, 7, 28, 6, 47, 16, 52, 66, 54, 176, 44,
-           480,
-           507, 157, 248]
-
-    for tmp in range(3, 49, 3):
-        cfg.insert(tmp, cfg_def[tmp])
-
-    return _resnet('resnet50', Bottleneck, [3, 4, 6, 3], cfg, pretrained, progress,
-                   **kwargs)
-
-
-def resnet50_new_3(pretrained=False, progress=True, **kwargs):
-    r"""ResNet-50 model from
-    `"Deep Residual Learning for Image Recognition" <https://arxiv.org/pdf/1512.03385.pdf>`_
-
-    Args:
-        pretrained (bool): If True, returns a model pre-trained on ImageNet
-        progress (bool): If True, displays a progress bar of the download to stderr
-    """
-    cfg_def = [[64], [64, 64, 256] * 3, [128, 128, 512] * 4, [256, 256, 1024] * 6, [512, 512, 2048] * 3]
-    cfg_def = [item for sub_list in cfg_def for item in sub_list]
-
-    # cfg = [64, 64, 64, 64, 64, 64, 64, 128, 128, 128, 128, 128, 128, 128, 128, 256,
-    #        256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 512, 512,
-    #        512, 512, 512, 512]
-    cfg = [36, 26, 29, 28, 21, 13, 4, 29, 43, 26, 20, 48, 39, 25, 40, 123, 125, 67, 55, 73, 69, 93, 106, 128, 120, 141,
-           137,
-           269, 234, 494, 507, 366, 273]
 
     for tmp in range(3, 49, 3):
         cfg.insert(tmp, cfg_def[tmp])
