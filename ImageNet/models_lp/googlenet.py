@@ -7,7 +7,7 @@ from torch.jit.annotations import Optional, Tuple
 from torch import Tensor
 
 
-__all__ = ['GoogLeNet', 'googlenet', "GoogLeNetOutputs", "_GoogLeNetOutputs"]
+__all__ = ['googlenetlp']
 
 model_urls = {
     # GoogLeNet ported from TensorFlow
@@ -23,7 +23,7 @@ GoogLeNetOutputs.__annotations__ = {'logits': Tensor, 'aux_logits2': Optional[Te
 _GoogLeNetOutputs = GoogLeNetOutputs
 
 
-def googlenet(pretrained=False, progress=True, **kwargs):
+def googlenetlp(pretrained=False, progress=True, **kwargs):
     r"""GoogLeNet (Inception v1) model architecture from
     `"Going Deeper with Convolutions" <http://arxiv.org/abs/1409.4842>`_.
 

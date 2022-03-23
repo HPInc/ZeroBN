@@ -34,6 +34,10 @@ cd ImageNet
 python train_imagenet.py -a vgg19_bn --save ./logs-vgg19bn/ --lr 0.01 -sr --ssr 0.001 ../imagenet_100/ --our 1 --prune_ratio 0.5 --epochs 90 --batch-size 128 --auto
 python train_imagenet.py -a googlenet --save ./logs-googlenet/ --lr 0.1 -sr --ssr 0.0001 ../imagenet_100/ --our 1 --prune_ratio 0.5 --epochs 90 --batch-size 128 --auto
 python train_imagenet_resnetnew.py -a resnet50_new --save ./logs-resnet50new/ --lr 0.1 -sr --ssr 0.0001 ../imagenet_100/ --our 1 --prune_ratio 0.5 --epochs 90 --batch-size 128 --auto
+# Layer pruning
+python train_imagenet_lp.py -a vgg19_bnlp --save ./logs-vgg19bn/ --lr 0.01 -sr --ssr 0.001 ../imagenet_100/ --our 1 --prune_ratio 0.5 --epochs 90 --batch-size 128 --auto
+python train_imagenet_lp.py -a googlenetlp --save ./logs-googlenet/ --lr 0.1 -sr --ssr 0.0001 ../imagenet_100/ --our 1 --prune_ratio 0.5 --epochs 90 --batch-size 128 --auto
+python train_imagenet_resnetnew_lp.py -a resnet50_newlp --save ./logs-resnet50new/ --lr 0.1 -sr --ssr 0.0001 ../imagenet_100/ --our 1 --prune_ratio 0.5 --epochs 90 --batch-size 128 --auto
 ```
 
 # Saved Models
